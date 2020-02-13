@@ -11,11 +11,19 @@
 		</tr>
 		<tr>
 			<th>follows</th>
-			<th><%= user.active_relationships.count %></th>
+			<th>
+				<%= link_to follows_user_path(user) do %>
+				<%= user.active_relationships.count %>
+				<% end %>
+			</th>
 		</tr>
 		<tr>
 			<th>followers</th>
-			<th><%= user.passive_relationships.count %></th>
+			<th>
+				<%= link_to followers_user_path(user) do %>
+				<%= user.passive_relationships.count %>
+				<% end %>
+			</th>
 		</tr>
 		<tr>
 		<% if current_user != user %>
